@@ -4,12 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CV — Biagio Ambrosio</title>
-  <meta name="description" content="Il percorso di Biagio Ambrosio: dall'astrofisica planetaria alla divulgazione scientifica. Esperienze, formazione, pubblicazioni e conferenze.">
+  <meta name="description" content="Il percorso di Biagio Ambrosio: dall'astrofisica planetaria alla divulgazione scientifica. Esperienze, formazione, pubblicazioni, conferenze, workshop e scuole.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Schede con elenco scorrevole (Conferenze, Workshop e scuole) */
+    .card-title { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .count { font: 600 13px var(--body); color: var(--text-2); background: var(--surface-2); padding: 2px 10px; border-radius: 999px; }
+    .scroll-list { list-style: none; margin: 0; padding: 0; position: relative; overflow-y: auto; scrollbar-width: none; }
+    .scroll-list::-webkit-scrollbar { display: none; }
+    .scroll-list li { padding: 10px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 2px; }
+    .scroll-list li:last-child { border-bottom: 0; }
+    .scroll-list .date { font-size: 13px; font-weight: 600; color: var(--blue); }
+    .scroll-list .what { font-size: 15px; font-weight: 500; line-height: 1.4; color: var(--text); }
+    .scroll-list .role { font-size: 14px; line-height: 1.4; color: var(--muted); }
+    .scroll-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--line-strong); border-radius: 12px; background: transparent; color: var(--accent); font: 600 14px var(--body); cursor: pointer; }
+    .scroll-btn:hover { border-color: var(--accent); color: var(--accent-hover); }
+    .scroll-btn svg { width: 18px; height: 18px; flex: none; }
+    .scroll-btn[hidden] { display: none; }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -109,23 +125,74 @@
           <h2>Riconoscimenti</h2>
           <p style="color: var(--text-2)"><strong style="color: var(--accent)">Fukuoka Award</strong> per la miglior presentazione, ENGAGE 2025.</p>
         </section>
-        <section class="card">
-          <h2>Conferenze recenti</h2>
-          <ul>
-            <li><span class="year">2026</span> · 3° Congresso nazionale NQSTI, Napoli</li>
-            <li><span class="year">2025</span> · VITE III, Matera — talk e demo VR</li>
-            <li><span class="year">2025</span> · XX Congresso di Scienze Planetarie, Pescara</li>
-            <li><span class="year">2024</span> · EAS 2024, Padova — comitato organizzatore</li>
-            <li><span class="year">2024</span> · .Astronomy13, Madrid — demo VR</li>
-          </ul>
-          <p class="note">15 conferenze in totale dal 2022</p>
+
+        <!-- CONFERENZE: per aggiungerne una, copia un <li>...</li> e incollalo in cima all'elenco.
+             data-visible = quante voci si vedono prima di scorrere. -->
+        <section class="card scroll-card" data-visible="3"
+                 data-more-one="Clicca per l'altra conferenza"
+                 data-more-many="Clicca per le altre {n} conferenze">
+          <div class="card-title"><h2 id="conf-title">Conferenze</h2><span class="count"></span></div>
+          <button class="scroll-btn scroll-up" type="button" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
+            Torna alle più recenti
+          </button>
+          <ol class="scroll-list" aria-labelledby="conf-title" tabindex="0">
+            <li><span class="date">Apr 2026</span><span class="what">3° Congresso nazionale NQSTI · Napoli</span><span class="role">Talk, allestimento outreach e tutor</span></li>
+            <li><span class="date">Nov 2025</span><span class="what">VITE III · Matera</span><span class="role">Talk e demo VR</span></li>
+            <li><span class="date">Set 2025</span><span class="what">LGWA Meeting · San Benedetto del Tronto</span><span class="role">Demo VR e supporto outreach</span></li>
+            <li><span class="date">Feb 2025</span><span class="what">XX Congresso Nazionale di Scienze Planetarie · Pescara</span><span class="role">Talk</span></li>
+            <li><span class="date">Lug 2024</span><span class="what">EAS 2024 · Padova</span><span class="role">Comitato organizzatore, e-poster, eventi pubblici e tavola rotonda</span></li>
+            <li><span class="date">Giu 2024</span><span class="what">CAP2024 · Tolosa</span><span class="role">Demo VR</span></li>
+            <li><span class="date">Giu 2024</span><span class="what">European Lunar Symposium 2024 · Dumfries</span><span class="role">Talk</span></li>
+            <li><span class="date">Apr 2024</span><span class="what">.Astronomy13 · Madrid</span><span class="role">Demo VR e sessione unconference</span></li>
+            <li><span class="date">Apr 2024</span><span class="what">VITE II · Roma</span><span class="role">Talk e demo VR</span></li>
+            <li><span class="date">Apr 2024</span><span class="what">AFAS 2024 · Marrakech</span><span class="role">E-poster</span></li>
+            <li><span class="date">Feb 2024</span><span class="what">XIX Congresso Nazionale di Scienze Planetarie · Bormio</span><span class="role">Poster</span></li>
+            <li><span class="date">Set 2023</span><span class="what">EANA 2023 · Madrid</span><span class="role">Talk</span></li>
+            <li><span class="date">Giu 2023</span><span class="what">European Lunar Symposium 2023 · Padova</span><span class="role">Comitato organizzatore locale</span></li>
+            <li><span class="date">Mag 2023</span><span class="what">BEACON 2023 · La Palma</span><span class="role">Poster</span></li>
+            <li><span class="date">Nov 2022</span><span class="what">VR e AR per la diffusione della scienza · Palermo</span><span class="role">Demo VR</span></li>
+          </ol>
+          <button class="scroll-btn scroll-down" type="button" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            <span class="label"></span>
+          </button>
         </section>
+
+        <!-- WORKSHOP E SCUOLE: stesso funzionamento delle conferenze. -->
+        <section class="card scroll-card" data-visible="3"
+                 data-more-one="Clicca per l'altro workshop"
+                 data-more-many="Clicca per gli altri {n} workshop e scuole">
+          <div class="card-title"><h2 id="ws-title">Workshop e scuole</h2><span class="count"></span></div>
+          <button class="scroll-btn scroll-up" type="button" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
+            Torna ai più recenti
+          </button>
+          <ol class="scroll-list" aria-labelledby="ws-title" tabindex="0">
+            <li><span class="date">Ott 2026</span><span class="what">22nd Advanced School of Computer Graphics and AI for Cultural Heritage and Science</span></li>
+            <li><span class="date">Giu 2025</span><span class="what">ENGAGE 2025</span><span class="role">Fukuoka Award per la miglior presentazione</span></li>
+            <li><span class="date">Giu 2024</span><span class="what">ENGAGE 2024</span></li>
+            <li><span class="date">Mar 2024</span><span class="what">PhD Training Week · Università di Padova</span><span class="role">Comunicazione e valorizzazione della ricerca; Ricerca e innovazione responsabile</span></li>
+            <li><span class="date">Ott 2023</span><span class="what">ENGAGE 2023 – Arte e Scienza</span></li>
+            <li><span class="date">Nov 2022</span><span class="what">ENGAGE 2022</span></li>
+            <li><span class="date">Set 2022</span><span class="what">Officina di Narrazione della Scienza (ONSCI)</span></li>
+            <li><span class="date">Mag–Giu 2022</span><span class="what">Life on Earth and Beyond</span></li>
+            <li><span class="date">Feb 2022</span><span class="what">Una Roadmap per la Luna: Scienza e tecnologia</span></li>
+            <li><span class="date">Nov 2021</span><span class="what">ENGAGE 2021</span></li>
+          </ol>
+          <button class="scroll-btn scroll-down" type="button" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            <span class="label"></span>
+          </button>
+        </section>
+
         <section class="card">
           <h2>Strumenti</h2>
           <ul class="tags" style="flex-direction: row">
-            <li class="tag">Stellarium</li><li class="tag">Scratch</li><li class="tag">Unity / C#</li><li class="tag">Meta Quest</li><li class="tag">Blender</li><li class="tag">Arduino</li><li class="tag">Python</li><li class="tag">Canva</li>
+            <li class="tag">Stellarium</li><li class="tag">Scratch</li><li class="tag">C/C++</li><li class="tag">Unity / C#</li><li class="tag">Meta Quest</li><li class="tag">Blender</li><li class="tag">Arduino</li><li class="tag">Python</li><li class="tag">Canva</li>
           </ul>
         </section>
+
         <section class="card">
           <h2>Lingue</h2>
           <p style="color: var(--text-2); font-size: 15px">Italiano — madrelingua<br>Inglese — C1</p>
@@ -143,5 +210,61 @@
       </nav>
     </div>
   </footer>
+
+  <script>
+    // Schede scorrevoli: mostra le prime N voci e frecce per scorrere le altre.
+    (function () {
+      var smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+
+      document.querySelectorAll('.scroll-card').forEach(function (card) {
+        var list = card.querySelector('.scroll-list');
+        var items = Array.prototype.slice.call(list.children);
+        var up = card.querySelector('.scroll-up');
+        var down = card.querySelector('.scroll-down');
+        var label = down.querySelector('.label');
+        var visible = parseInt(card.getAttribute('data-visible'), 10) || 4;
+        var count = card.querySelector('.count');
+        if (count) count.textContent = items.length;
+
+        if (items.length <= visible) return; // pochi elementi: niente frecce
+
+        function fit() {
+          list.style.maxHeight = items[visible].offsetTop + 'px';
+          update();
+        }
+
+        function hiddenBelow() {
+          var bottom = list.scrollTop + list.clientHeight + 1;
+          return items.filter(function (li) { return li.offsetTop + li.offsetHeight > bottom; }).length;
+        }
+
+        function update() {
+          var n = hiddenBelow();
+          down.hidden = n === 0;
+          up.hidden = list.scrollTop <= 1;
+          label.textContent = n === 1
+            ? card.getAttribute('data-more-one')
+            : card.getAttribute('data-more-many').replace('{n}', n);
+        }
+
+        down.addEventListener('click', function () {
+          var bottom = list.scrollTop + list.clientHeight + 1;
+          var next = items.find(function (li) { return li.offsetTop + li.offsetHeight > bottom; });
+          if (next) list.scrollTo({ top: next.offsetTop, behavior: smooth });
+        });
+
+        up.addEventListener('click', function () {
+          var target = list.scrollTop - list.clientHeight;
+          var prev = items.find(function (li) { return li.offsetTop >= target - 1; });
+          list.scrollTo({ top: target <= 0 || !prev ? 0 : prev.offsetTop, behavior: smooth });
+        });
+
+        list.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', fit);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+        fit();
+      });
+    })();
+  </script>
 </body>
 </html>
