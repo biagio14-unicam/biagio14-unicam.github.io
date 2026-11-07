@@ -25,6 +25,10 @@
     .scroll-btn:hover { border-color: var(--accent); color: var(--accent-hover); }
     .scroll-btn svg { width: 18px; height: 18px; flex: none; }
     .scroll-btn[hidden] { display: none; }
+    /* Seminari */
+    .seminars li { display: flex; flex-direction: column; gap: 4px; }
+    .seminars strong { font-weight: 600; color: var(--text); line-height: 1.4; }
+    .seminars .where { color: var(--muted); font-size: 15px; line-height: 1.4; }
   </style>
 </head>
 <body>
@@ -50,7 +54,7 @@
       <div>
         <p class="eyebrow">Curriculum vitae</p>
         <h1>Il mio percorso</h1>
-        <p>Dall'astrofisica planetaria alla divulgazione: ricerca, didattica e progetti per il pubblico.</p>
+        <p>Dall'astrofisica alla divulgazione: ricerca, didattica e progetti per il pubblico.</p>
       </div>
       <a class="btn btn-primary" href="https://www.linkedin.com/in/biagio14/" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
@@ -68,7 +72,7 @@
               <div class="entry">
                 <span class="when">Apr 2026 – oggi · Italia</span>
                 <h3>Formatore STEM freelance</h3>
-                <p>Progetto e conduco StellariumLab, laboratorio di 30 ore per una scuola media. Formazione dei facilitatori al Festival dell'Astronomia 2026; talk e guida al telescopio a «Il cielo sopra Maratea».</p>
+                <p>Progettazione e conduzione di StellariumLab, laboratorio di 30 ore per una scuola media. Formazione dei facilitatori al Festival dell'Astronomia 2026; talk e guida al telescopio a «Il cielo sopra Maratea».</p>
               </div>
             </li>
             <li>
@@ -76,7 +80,7 @@
               <div class="entry">
                 <span class="when">Ott 2024 – Mar 2026 · Camerino</span>
                 <h3>Ricercatore postdoc in didattica della fisica — Università di Camerino</h3>
-                <p>Gestione completa della mostra nazionale QUANTUM (900+ visite, team di 5). Attività di outreach per il Dipartimento di Fisica, il gioco digitale QTris, co-relatore di una tesi sulla VR multigiocatore, grafica per la collaborazione LGWA.</p>
+                <p>Gestione completa della mostra nazionale QUANTUM (900+ visite, team di 5). Attività di outreach per il Dipartimento di Fisica, versione digitale del gioco QTris, co-relatore di una tesi sulla VR multigiocatore, grafica per la collaborazione LGWA.</p>
               </div>
             </li>
             <li>
@@ -96,7 +100,7 @@
             <article class="card">
               <span class="when">2021–2024</span>
               <h3>Dottorato in Astronomia</h3>
-              <p>Università di Padova. Tesi sull'esplorazione della Luna tra comunicazione e scienza.</p>
+              <p>Università di Padova. Tesi sull'uso della VR per la comunicazione dell'astronomia.</p>
             </article>
             <article class="card">
               <span class="when">2018–2021</span>
@@ -116,6 +120,28 @@
           <ul class="pubs">
             <li>Ambrosio, B. (2025). <em>Exploration of the Moon between communication and science.</em> Memorie della Società Astronomica Italiana, 96, 76–80. <a href="https://doi.org/10.36116/MEMSAIT_96N1.2025.76" rel="noopener">DOI</a></li>
             <li>Ambrosio, B., Plotnikova, A., Zanella, A. (2024). <em>The gravity battle — a hands-on astronomy education activity.</em> astroEDU. <a href="https://doi.org/10.14586/astroedu/2405" rel="noopener">DOI</a></li>
+          </ul>
+        </section>
+
+        <!-- SEMINARI: per aggiungerne uno, copia un <li>...</li> e incollalo in cima all'elenco. -->
+        <section>
+          <h2>Seminari</h2>
+          <ul class="pubs seminars">
+            <li>
+              <span class="when">Set 2026 · Napoli</span>
+              <strong>«Public Outreach: a professional perspective»</strong>
+              <span class="where">Osservatorio Astronomico di Capodimonte</span>
+            </li>
+            <li>
+              <span class="when">Mag 2025 · Camerino</span>
+              <strong>«Public outreach through XR media»</strong>
+              <span class="where">Corso di Applied Game Design, Polo di Informatica, Università di Camerino</span>
+            </li>
+            <li>
+              <span class="when">Mag 2024 · Padova</span>
+              <strong>«Introduction to public outreach» e «VR experiences: development process and tools»</strong>
+              <span class="where">Corso di Planetary Geology, Dipartimento di Geoscienze, Università di Padova</span>
+            </li>
           </ul>
         </section>
       </div>
