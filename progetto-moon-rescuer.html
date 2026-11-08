@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MOON RESCUER — Biagio Ambrosio</title>
+  <meta name="description" content="MOON RESCUER: app in realtà virtuale per esplorare la Luna, progettata e sviluppata da Biagio Ambrosio durante il dottorato e testata da circa 100 persone.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/progetto.css">
+  <script src="assets/js/progetto.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="site-header">
+    <nav class="container nav" aria-label="Navigazione principale">
+      <a class="brand" href="index.html">
+        <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="5" fill="#F5B841"/><ellipse cx="13" cy="13" rx="12" ry="4.5" fill="none" stroke="#7AA2FF" stroke-width="1.5" transform="rotate(-25 13 13)"/></svg>
+        Biagio Ambrosio
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="progetti.html" aria-current="page">Progetti</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenuto" class="container">
+    <a class="back-link" href="progetti.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Tutti i progetti</a>
+
+    <section class="p-hero">
+      <div class="p-hero-text">
+        <p class="eyebrow">Realtà virtuale · 2021–2024</p>
+        <h1>MOON RESCUER</h1>
+        <p class="lead">Un'app in realtà virtuale che porta chi la prova sulla superficie della Luna. L'ho progettata e sviluppata da solo durante il dottorato in Astronomia, per raccontare la scienza e l'esplorazione lunare facendola vivere in prima persona.</p>
+        <dl class="facts">
+          <div><dt>Ruolo</dt><dd>Ideazione, design e sviluppo</dd></div>
+          <div><dt>Periodo</dt><dd>2021–2024</dd></div>
+          <div><dt>Contesto</dt><dd>Dottorato, Università di Padova e INAF</dd></div>
+          <div><dt>Dispositivo</dt><dd>Meta Quest 2</dd></div>
+        </dl>
+      </div>
+      <div class="p-hero-media">
+        <img src="assets/img/moon-rescuer.jpg" alt="Base lunare con cupola e modulo abitativo nell'app MOON RESCUER">
+      </div>
+    </section>
+
+    <section class="p-section">
+      <h2>L'app</h2>
+      <div class="prose-col">
+        <p>In MOON RESCUER ci si muove in un ambiente lunare ricostruito in 3D e si affrontano scenari di missione ispirati all'esplorazione reale della Luna: basi abitative, pannelli solari, rover. Il visore trasforma ciò che di solito si racconta con immagini e numeri in un'esperienza da vivere in prima persona.</p>
+        <p>L'app è il cuore della mia tesi di dottorato, dedicata all'uso della realtà virtuale per la comunicazione dell'astronomia. Ho seguito l'intero ciclo di sviluppo: requisiti, architettura, programmazione, ottimizzazione per un visore standalone e distribuzione.</p>
+        <p>Da MOON RESCUER è nato poi <strong>MOON LIGHTENER</strong>, la versione multigiocatore in cui due persone esplorano la Luna insieme, sviluppata in una tesi di laurea che ho co-diretto.</p>
+      </div>
+    </section>
+
+    <section class="p-section" aria-labelledby="trailer-title">
+      <h2 id="trailer-title">Trailer</h2>
+      <!-- TRAILER: scrivi l'ID del video YouTube in data-youtube (es. per youtube.com/watch?v=AbC123xYz scrivi AbC123xYz),
+           oppure carica il file in assets/video e scrivi il percorso in data-mp4 (es. assets/video/moon-rescuer.mp4). -->
+      <div class="video" data-youtube="" data-mp4="" data-title="Trailer di MOON RESCUER">
+        <img class="poster" src="assets/img/moon-rescuer.jpg" alt="">
+        <button class="play" type="button">
+          <span class="circle"><svg viewBox="0 0 24 24" fill="#0B1020" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span>
+          <span class="play-label">Guarda il trailer</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="p-section">
+      <h2>Risultati</h2>
+      <p class="intro">Ho testato l'app con il pubblico e con i ricercatori, raccogliendo feedback quantitativi attraverso questionari. Le risposte hanno guidato più cicli di miglioramento dell'usabilità e dei contenuti.</p>
+      <dl class="p-stats">
+        <div class="p-stat"><dt>tester tra pubblico e ricercatori</dt><dd>~100</dd></div>
+        <div class="p-stat"><dt>dal grande pubblico, tra i 15 e i 25 anni</dt><dd>50%</dd></div>
+        <div class="p-stat"><dt>dalla comunità scientifica, a tutti i livelli di carriera</dt><dd>50%</dd></div>
+      </dl>
+      <!-- FEEDBACK: sostituisci i testi tra parentesi quadre con frasi reali dai questionari
+           e togli la classe "todo" da <figure class="quote todo"> quando hai finito. -->
+      <div class="quotes">
+        <figure class="quote todo">
+          <blockquote>[Frase di feedback di un tester]</blockquote>
+          <figcaption>[Es. Studente, 19 anni]</figcaption>
+        </figure>
+        <figure class="quote todo">
+          <blockquote>[Frase di feedback di un ricercatore]</blockquote>
+          <figcaption>[Es. Ricercatrice in planetologia]</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="p-section">
+      <h2>Dentro l'app</h2>
+      <div class="gallery">
+        <figure>
+          <img src="assets/img/moon-rescuer.jpg" alt="Cupola con serra e modulo abitativo sulla superficie lunare" loading="lazy">
+          <figcaption>La base lunare</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/moon-rescuer-base.jpg" alt="Pannelli solari e struttura della base vista dall'alto" loading="lazy">
+          <figcaption>Pannelli solari e strutture della base</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/moon-rescuer-rover.jpg" alt="Rover lunare ripreso da vicino" loading="lazy">
+          <figcaption>Il rover</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="p-section" aria-labelledby="tech-title">
+      <h2 id="tech-title">Realizzato con</h2>
+      <!-- LOGHI: carica in assets/img i file logo-unity.png, logo-blender.png e logo-meta-quest.png
+           (dai kit ufficiali dei marchi): compaiono da soli al posto delle icone. -->
+      <ul class="tech">
+        <li>
+          <div class="logo"><img src="assets/img/logo-unity.png" alt="" onerror="this.remove()"><span class="fallback"><svg viewBox="0 0 24 24" fill="none" stroke="#7AA2FF" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg></span></div>
+          <strong>Unity</strong>
+          <span class="role">Motore di sviluppo (C#, OpenXR)</span>
+        </li>
+        <li>
+          <div class="logo"><img src="assets/img/logo-blender.png" alt="" onerror="this.remove()"><span class="fallback"><svg viewBox="0 0 24 24" fill="none" stroke="#7AA2FF" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="13" r="7"/><circle cx="13" cy="13" r="2.5"/><path d="M3 9l7 1"/></svg></span></div>
+          <strong>Blender</strong>
+          <span class="role">Modellazione 3D</span>
+        </li>
+        <li>
+          <div class="logo"><img src="assets/img/logo-meta-quest.png" alt="" onerror="this.remove()"><span class="fallback"><svg viewBox="0 0 24 24" fill="none" stroke="#7AA2FF" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3h-3.5l-1.5-2h-2l-1.5 2H6a3 3 0 0 1-3-3z"/><circle cx="8.5" cy="11.5" r="1.5"/><circle cx="15.5" cy="11.5" r="1.5"/></svg></span></div>
+          <strong>Meta Quest 2</strong>
+          <span class="role">Visore di riferimento</span>
+        </li>
+      </ul>
+    </section>
+
+    <nav class="p-next" aria-label="Altri progetti">
+      <a class="btn btn-ghost" href="progetti.html">← Tutti i progetti</a>
+      <a class="btn btn-primary" href="contatti.html">Vuoi portarlo a un evento? Scrivimi</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Biagio Ambrosio</span>
+      <nav aria-label="Contatti">
+        <a href="mailto:biagio.ambrosio@unicam.it">biagio.ambrosio@unicam.it</a>
+        <a href="https://www.linkedin.com/in/biagio14/" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
