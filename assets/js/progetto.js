@@ -2,7 +2,8 @@
 // Nel codice HTML: <div class="video" data-youtube="ID" data-mp4="assets/video/file.mp4">
 //  - data-youtube: l'ID del video YouTube (la parte dopo "v=" nel link, es. dQw4w9WgXcQ)
 //  - data-mp4: in alternativa, un file video caricato nella cartella assets/video
-// Se entrambi sono vuoti, viene mostrato "Trailer in arrivo".
+// Se entrambi sono vuoti, viene mostrato il testo di data-empty (di default "Trailer in arrivo").
+// data-youtube accetta anche il link completo (youtube.com/watch?v=..., youtu.be/...).
 (function () {
   document.querySelectorAll('.video').forEach(function (box) {
     var yt = (box.getAttribute('data-youtube') || '').trim();
@@ -10,9 +11,13 @@
     var btn = box.querySelector('.play');
     var label = box.querySelector('.play-label');
 
+    // Se è stato incollato il link intero, ne ricava l'ID
+    var m = yt.match(/(?:v=|youtu\.be\/|embed\/|shorts\/|live\/)([A-Za-z0-9_-]{11})/);
+    if (m) yt = m[1];
+
     if (!yt && !mp4) {
       if (btn) btn.disabled = true;
-      if (label) label.textContent = 'Trailer in arrivo';
+      if (label) label.textContent = box.getAttribute('data-empty') || 'Trailer in arrivo';
       return;
     }
 

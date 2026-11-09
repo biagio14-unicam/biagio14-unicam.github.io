@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Il cielo sopra Maratea — Biagio Ambrosio</title>
+  <meta name="description" content="Il cielo sopra Maratea: ogni agosto una serata di osservazione del cielo con telescopi amatoriali, organizzata dall'Associazione Lu.Pa., con un talk divulgativo di Biagio Ambrosio.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/progetto.css">
+  <script src="assets/js/progetto.js" defer></script>
+  <style>
+    /* Riquadro foto: finché il file non c'è, si vede il segnaposto */
+    .photo-slot { position: relative; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; border: 1px dashed var(--line-strong); background: var(--surface); }
+    .photo-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; border-radius: 0; aspect-ratio: auto; }
+    .photo-slot .ph-text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px; text-align: center; color: var(--muted); font-size: 14px; }
+    .photo-slot .ph-text svg { width: 36px; height: 36px; }
+    .photo-slot .ph-text code { color: var(--text-2); }
+    .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .two-col figure, .video-figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+    .two-col figcaption, .video-figure figcaption { font-size: 16px; color: var(--text-2); }
+    .video-figure .video { max-width: none; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="site-header">
+    <nav class="container nav" aria-label="Navigazione principale">
+      <a class="brand" href="index.html">
+        <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="5" fill="#F5B841"/><ellipse cx="13" cy="13" rx="12" ry="4.5" fill="none" stroke="#7AA2FF" stroke-width="1.5" transform="rotate(-25 13 13)"/></svg>
+        Biagio Ambrosio
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="progetti.html" aria-current="page">Progetti</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenuto" class="container">
+    <a class="back-link" href="progetti.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Tutti i progetti</a>
+
+    <section class="p-hero">
+      <div class="p-hero-text">
+        <p class="eyebrow">Evento pubblico · Ogni agosto dal 2023</p>
+        <h1>Il cielo sopra Maratea</h1>
+        <p class="lead">Una serata d'estate per guardare il cielo con i telescopi, nella cittadina in cui sono nato. È aperta a tutti: non serve nessuna conoscenza di astronomia, solo un po' di curiosità.</p>
+        <dl class="facts">
+          <div><dt>Ruolo</dt><dd>Talk introduttivo e guida alle osservazioni</dd></div>
+          <div><dt>Quando</dt><dd>Ogni anno ad agosto</dd></div>
+          <div><dt>Dove</dt><dd>Maratea (PZ)</dd></div>
+          <div><dt>Organizzazione</dt><dd><a href="http://www.lu-pa.it/" rel="noopener">Associazione Lu.Pa.</a></dd></div>
+        </dl>
+      </div>
+      <div class="p-hero-media">
+        <img src="assets/img/cielo_sopra_maratea_2023.png" alt="Biagio, al microfono, introduce la serata davanti al pubblico nell'edizione 2023">
+      </div>
+    </section>
+
+    <section class="p-section">
+      <h2>La serata</h2>
+      <div class="prose-col">
+        <p>Il cielo sopra Maratea è organizzato dall'<a href="http://www.lu-pa.it/" rel="noopener">Associazione Lu.Pa.</a> ed è pensato per il pubblico generico.</p>
+        <p>La serata si apre con un mio <strong>intervento divulgativo</strong>, ogni anno su un tema diverso legato all'astronomia o alla scienza in generale. Poi ci si sposta ai <strong>telescopi amatoriali</strong>, dove guido le osservazioni e racconto cosa si sta guardando.</p>
+      </div>
+    </section>
+
+    <section class="p-section">
+      <h2>Le edizioni</h2>
+      <!-- FOTO: carica in assets/img i file maratea-2026.jpg e maratea-2024.jpg.
+           Compaiono da soli al posto dei riquadri tratteggiati. -->
+      <div class="two-col">
+        <figure>
+          <div class="photo-slot">
+            <span class="ph-text"><svg viewBox="0 0 24 24" fill="none" stroke="#7AA2FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 8"/></svg>Foto in arrivo<br><code>assets/img/maratea-2026.jpg</code></span>
+            <img src="assets/img/maratea-2026.jpg" alt="Biagio durante il talk all'edizione 2026 de Il cielo sopra Maratea" loading="lazy" onerror="this.remove()">
+          </div>
+          <figcaption>Il mio talk dal titolo «La scienza: un dono da condividere»</figcaption>
+        </figure>
+        <figure>
+          <div class="photo-slot">
+            <span class="ph-text"><svg viewBox="0 0 24 24" fill="none" stroke="#7AA2FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 8"/></svg>Foto in arrivo<br><code>assets/img/maratea-2024.jpg</code></span>
+            <img src="assets/img/maratea-2024.jpg" alt="Il pubblico osserva il cielo ai telescopi durante l'edizione 2024" loading="lazy" onerror="this.remove()">
+          </div>
+          <figcaption>Osservazione ai telescopi durante l'edizione del 2024</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="p-section">
+      <h2>La prima edizione</h2>
+      <!-- VIDEO: incolla in data-youtube il link del video YouTube (va bene anche il link intero). -->
+      <figure class="video-figure">
+        <div class="video" data-youtube="" data-mp4="" data-empty="Video in arrivo" data-title="Il cielo sopra Maratea, prima edizione">
+          <img class="poster" src="assets/img/cielo_sopra_maratea_2023.png" alt="">
+          <button class="play" type="button">
+            <span class="circle"><svg viewBox="0 0 24 24" fill="#0B1020" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span>
+            <span class="play-label">Guarda il video</span>
+          </button>
+        </div>
+        <figcaption>Guarda il video integrale della prima edizione!</figcaption>
+      </figure>
+    </section>
+
+    <nav class="p-next" aria-label="Altri progetti">
+      <a class="btn btn-ghost" href="progetti.html">← Tutti i progetti</a>
+      <a class="btn btn-primary" href="contatti.html">Organizzi una serata di divulgazione? Scrivimi</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Biagio Ambrosio</span>
+      <nav aria-label="Contatti">
+        <a href="mailto:biagio.ambrosio@unicam.it">biagio.ambrosio@unicam.it</a>
+        <a href="https://www.linkedin.com/in/biagio14/" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
