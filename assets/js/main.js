@@ -1,3 +1,17 @@
+// Ordina le schede della pagina Progetti dalla più recente alla più vecchia (attributo data-date: AAAA-MM o AAAA)
+(function () {
+  var grid = document.querySelector('.project-grid');
+  if (!grid) return;
+  var key = function (el) {
+    var d = (el.getAttribute('data-date') || '0000').trim();
+    return d.length === 4 ? d + '-00' : d;      // solo l'anno: va dopo i progetti dello stesso anno con il mese
+  };
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.project'));
+  cards.map(function (el, i) { return { el: el, k: key(el), i: i }; })
+    .sort(function (a, b) { return a.k < b.k ? 1 : a.k > b.k ? -1 : a.i - b.i; })   // a parità resta l'ordine del codice
+    .forEach(function (c) { grid.appendChild(c.el); });
+})();
+
 // Filtri della pagina Progetti
 (function () {
   var buttons = document.querySelectorAll('.filter');
