@@ -8,7 +8,8 @@
   function apply(cat) {
     var n = 0;
     cards.forEach(function (card) {
-      var show = cat === 'Tutti' || card.getAttribute('data-cat') === cat;
+      // data-cat può contenere più categorie separate da "|"
+      var show = cat === 'Tutti' || card.getAttribute('data-cat').split('|').indexOf(cat) !== -1;
       card.hidden = !show;
       if (show) n++;
     });

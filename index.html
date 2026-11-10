@@ -14,6 +14,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Foto a rotazione nella testata */
+    .hero-photos { flex: 1 1 300px; max-width: 380px; margin: 0 auto; position: relative; aspect-ratio: 4 / 5; border-radius: 24px; overflow: hidden; border: 1px solid #2A3557; background: #141B2E; }
+    .hero-photos figure { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity .8s ease; }
+    .hero-photos figure.is-active { opacity: 1; }
+    .hero-photos img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-photos::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(to top, rgba(11,16,32,.85), rgba(11,16,32,0)); pointer-events: none; }
+    .hero-photos figcaption { position: absolute; left: 16px; right: 16px; bottom: 44px; z-index: 1; font-size: 14px; line-height: 1.35; color: #E8ECF5; }
+    .hero-photos .dots { position: absolute; left: 0; right: 0; bottom: 10px; z-index: 2; display: flex; justify-content: center; align-items: center; gap: 2px; }
+    .hero-photos .dots button { width: 26px; height: 26px; padding: 0; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .hero-photos .dots button span { width: 8px; height: 8px; border-radius: 50%; background: rgba(232,236,245,.45); transition: background .3s, transform .3s; }
+    .hero-photos .dots button[aria-current="true"] span { background: var(--accent); transform: scale(1.25); }
+    .hero-photos .dots .pause { margin-left: 6px; color: #E8ECF5; }
+    .hero-photos .dots .pause svg { width: 14px; height: 14px; }
+    @media (prefers-reduced-motion: reduce) { .hero-photos figure { transition: none; } }
+
+    /* Fascia finale: invito a contattare */
+    .cta-box { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 40px; }
+    .cta-box > div:first-child { flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+    .cta-box h2 { font-size: clamp(28px, 3.4vw, 36px); font-weight: 600; }
+    .cta-box p { color: var(--text-2); max-width: 36em; }
+    @media (max-width: 600px) { .cta-box { padding: 28px 24px; } }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -47,10 +70,42 @@
           <div class="btn-row">
             <a class="btn btn-primary" href="progetti.html">Guarda i progetti</a>
             <a class="btn btn-ghost" href="cv.html">Leggi il CV</a>
+            <a class="btn btn-ghost" href="contatti.html">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              Contattami
+            </a>
           </div>
         </div>
-        <div class="portrait">
-          <img src="assets/img/ritratto.png" alt="Ritratto di Biagio Ambrosio" width="720" height="962">
+        <!-- FOTO A ROTAZIONE: la prima resta 1 secondo all'apertura, poi ognuna 3 secondi.
+             Per cambiarne una: sostituisci il file (formato verticale 4:5, es. 800×1000) e la didascalia. -->
+        <div class="hero-photos" role="group" aria-roledescription="carosello" aria-label="Foto di Biagio al lavoro">
+          <figure class="is-active">
+            <img src="assets/img/home-1-ritratto.jpg" alt="Ritratto di Biagio Ambrosio" width="800" height="1000">
+          </figure>
+          <figure>
+            <img src="assets/img/home-2-talk.jpg" alt="Biagio presenta un talk al leggio davanti al pubblico in sala conferenze" width="800" height="1000">
+            <figcaption>Un talk in sala conferenze</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/home-3-maurer.jpg" alt="Biagio insieme all'astronauta ESA Matthias Maurer" width="800" height="1000">
+            <figcaption>Con l'astronauta ESA Matthias Maurer, European Lunar Symposium 2023</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/home-4-maratea.jpg" alt="Serata all'aperto con il pubblico seduto davanti al palco e allo schermo" width="800" height="1000">
+            <figcaption>Il cielo sopra Maratea, 2026</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/home-5-crittografia.jpg" alt="Biagio mostra una carta da gioco spiegando la crittografia" width="800" height="1000">
+            <figcaption>La crittografia raccontata con le carte, mostra QUANTUM</figcaption>
+          </figure>
+          <div class="dots">
+            <button type="button" aria-label="Foto 1" aria-current="true"><span></span></button>
+            <button type="button" aria-label="Foto 2"><span></span></button>
+            <button type="button" aria-label="Foto 3"><span></span></button>
+            <button type="button" aria-label="Foto 4"><span></span></button>
+            <button type="button" aria-label="Foto 5"><span></span></button>
+            <button type="button" class="pause" aria-label="Metti in pausa le foto"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+          </div>
         </div>
       </div>
     </section>
@@ -142,6 +197,20 @@
         </div>
       </div>
     </section>
+
+    <section class="section container" aria-labelledby="cta-title">
+      <div class="cta-box">
+        <div>
+          <p class="eyebrow">Collaboriamo</p>
+          <h2 id="cta-title">Hai un progetto di divulgazione? Parliamone</h2>
+          <p>Mostre, laboratori per le scuole, attività per festival ed eventi, esperienze in realtà virtuale: raccontami cosa hai in mente e troviamo insieme il formato giusto per il tuo pubblico.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="contatti.html">Contattami</a>
+          <a class="btn btn-ghost" href="mailto:biagio.ambrosio@unicam.it">Scrivimi un'email</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -153,5 +222,47 @@
       </nav>
     </div>
   </footer>
+
+  <script>
+    // Foto a rotazione: la prima resta 1 s all'apertura, poi ogni foto 3 s (anche la prima nei giri successivi).
+    (function () {
+      var box = document.querySelector('.hero-photos');
+      if (!box) return;
+      var slides = box.querySelectorAll('figure');
+      var dots = box.querySelectorAll('.dots button:not(.pause)');
+      var pauseBtn = box.querySelector('.pause');
+      var FIRST = 1000, EACH = 3000;
+      var i = 0, timer = null, paused = false;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function show(n) {
+        slides[i].classList.remove('is-active'); dots[i].removeAttribute('aria-current');
+        i = (n + slides.length) % slides.length;
+        slides[i].classList.add('is-active'); dots[i].setAttribute('aria-current', 'true');
+      }
+      function schedule(delay) {
+        clearTimeout(timer);
+        if (paused) return;
+        timer = setTimeout(function () { show(i + 1); schedule(EACH); }, delay);
+      }
+      function setPaused(p) {
+        paused = p;
+        pauseBtn.setAttribute('aria-label', p ? 'Riprendi le foto' : 'Metti in pausa le foto');
+        pauseBtn.innerHTML = p
+          ? '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>'
+          : '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+        if (!p) schedule(EACH); else clearTimeout(timer);
+      }
+
+      dots.forEach(function (d, k) { d.addEventListener('click', function () { show(k); schedule(EACH); }); });
+      pauseBtn.addEventListener('click', function () { setPaused(!paused); });
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) clearTimeout(timer); else if (!paused) schedule(EACH);
+      });
+
+      // Chi preferisce ridurre le animazioni parte con le foto ferme (può scorrerle con i pallini).
+      if (reduce) setPaused(true); else schedule(FIRST);
+    })();
+  </script>
 </body>
 </html>
